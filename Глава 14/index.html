@@ -1,0 +1,46 @@
+I'm trying to continually increase the size of the balloon emoji 10px when a user pushes the up arrow as well as decrease size by 10px with down arrow on keypad.
+
+I've been trying to set:
+
+let size = para.style.fontSize;
+in order to get a variable for the size and then adjust that value by adding +/- 10px in my function. However, I've tried this method and it seems as if you can not set:
+
+para.style.fontSize = size +10;
+Does anybody have any suggestions to get this to work?
+
+Note: I have not included the size variable in the code below as I found it does not work.
+
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Title of the document</title>
+  <style>
+    p {
+      font-size: 50px;
+    }
+  </style>
+</head>
+
+<body>
+  <p>🎈</p>
+
+  <script>
+    let para = document.querySelector('p');
+
+
+    window.addEventListener("keydown", e => {
+    if (e.key == "ArrowUp") {
+      para.style.fontSize = '60px';
+    } else {
+      para.style.fontSize = '40px';
+    }
+  });
+
+
+
+  </script>
+
+</body>
+
+</html>
