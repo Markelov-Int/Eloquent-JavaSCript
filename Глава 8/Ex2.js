@@ -18,7 +18,15 @@ const box = {
       } finally{
         box.lock()
       }
+
+  box.unlock();
+      try {
+        return body();
+      } finally {
+        box.lock();
+      }
   }
+
   
   withBoxUnlocked(function() {
     box.content.push("gold piece");
